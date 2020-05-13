@@ -1,8 +1,20 @@
 const _ = require('lodash')
 var data = []
+var ids = []
 
 function add (name, content) {
-    data.push({ name: name, content: content });
+    function generarIdUnico(){
+      var nuevoId = Math.floor(Math.random() * 10000)
+      if(ids[nuevoId]){
+        add(name, content)
+      }
+      else{
+        ids[nuevoId] = true
+      }
+      return nuevoId;
+    };
+    var nuevoId = generarIdUnico()
+    data.push({ name: name, content: content, id: nuevoId });
   }
   
 function list () {
@@ -33,5 +45,5 @@ const randArrayEl = function(arr) {
     module.exports.add( getFakeName(), getFakeTweet() );
   }
   
-  add("Flavia", "mi primer tweet")
-  console.log(find({name: "Flavia"}))
+  add("Fla", "mi primer tweet")
+  add("Mati", "la tengo clarísima con Express!!")

@@ -10,19 +10,6 @@
     /><br />
     <b>Your Name</b><br />
     100 followers
-    <br>
-    <br>
-    <div class= "formulario">
-    {% if showForm %}
-    <form action="/tweets" method="POST">
-      <label for="name_field">Name:</label>
-      <input name="name" type="text"  id="name_field" />
-      <label for="text_field">Text:</label>
-      <input name="text" type="text" id="text_field" /><br><br>
-      <input type="submit" value="Submit" />
-    </form>
-  {% endif %}
-  </div>
   </div>
   <div class="col-md-9">
     <!-- display tweets here -->
@@ -35,12 +22,10 @@
           class="img-tweet"
         />
         <div class="userTweet">
-          <a href="/users/{{tweet.name}}">{{tweet.name}}</a>
+          {{tweet.name}}
         </div>
         <div class="contenidoTweet">
           {{tweet.content}}
-          id: 
-          <a href="/tweets/{{tweet.id}}">{{tweet.id}}</a>
         </div>
       </div>
     </li>

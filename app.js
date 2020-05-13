@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const app = express();
 const nunjucks = require("nunjucks");
 const routes = require('./routes');
+const bodyParser = require("body-parser")
 
 app.use('/', routes);
 
