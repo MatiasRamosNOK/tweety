@@ -1,24 +1,36 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
 
-{% block content %}
-  
-  <div class="page-header">
-    <h1>Welcome to Twitter.js!</h1>
+<div class="page-header">
+  <h1>Welcome to Twitter.js!</h1>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <img
+      src="https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=50&w=100"
+    /><br />
+    <b>Your Name</b><br />
+    100 followers
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <img src="https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=50&w=100"><br>
-      <b>Your Name</b><br>
-      100 followers
-    </div>
-    <div class="col-md-9">
-    
-      <!-- display tweets here -->
-      {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
-      {% endfor %}
-      
-    </div>
+  <div class="col-md-9">
+    <!-- display tweets here -->
+    {% for tweet in tweets %}
+    <li>
+      <div class="box">
+        <img
+          src="https://images.pexels.com/photos/33537/cat-animal-cat-portrait-mackerel.jpg?auto=compress&cs=tinysrgb&dpr=2&h=50&w=50"
+          alt="Cat"
+          class="img-tweet"
+        />
+        <div class="userTweet">
+          {{tweet.name}}
+        </div>
+        <div class="contenidoTweet">
+          {{tweet.content}}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
   </div>
-    
+</div>
+
 {% endblock %}
